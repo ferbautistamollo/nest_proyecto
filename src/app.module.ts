@@ -5,9 +5,10 @@ import { AffiliateModule } from './affiliate/affiliate.module';
 import { PersonController } from './person/person.controller';
 import { PersonModule } from './person/person.module';
 import { PersonService } from './person/person.service';
+import { LoansModule } from './loans/loans.module';
 
 @Module({
-  imports: [AffiliateModule, PersonModule],
+  imports: [AffiliateModule, PersonModule, LoansModule],
   controllers: [AppController, PersonController],
   providers: [AppService, PersonService],
   exports: [],

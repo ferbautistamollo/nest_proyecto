@@ -1,4 +1,8 @@
-import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { Person } from './interfaces/person.interface';
 import { v4 as uuid } from 'uuid';
 import { CreatePersonDto, UpdatePersonDto } from './dto';
@@ -60,7 +64,8 @@ export class PersonService {
   }
 
   delete(id: string) {
-    const person = this.findId(id);
-    this.persons = this.persons.filter((person) => person.id !== id);
+    this.findId(id);
+    this.persons = this.persons.filter((per) => per.id !== id);
+    return this.persons;
   }
 }
